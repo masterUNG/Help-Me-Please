@@ -114,6 +114,18 @@ public class AddValue extends FragmentActivity implements OnMapReadyCallback {
         });
 
 
+        //saveButton Controller
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+
+            }   // onClick
+        });
+
+
 
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
