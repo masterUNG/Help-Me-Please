@@ -3,7 +3,7 @@
 
     <string name="titleMain">เพิ่มปลายทาง</string>
     <string name="titleMain2">หรือ เลือกรายการที่ชอบ</string>
-
+    <string name="title_activity_add_value">Map</string>
 
 
 </resources>
