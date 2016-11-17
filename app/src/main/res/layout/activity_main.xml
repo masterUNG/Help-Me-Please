@@ -10,8 +10,38 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="appewtc.masterung.helpmeplease.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:gravity="center_horizontal"
+        android:id="@+id/linTopMain">
+
+        <TextView
+            android:text="@string/titleMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textSize="24sp" />
+
+        <TextView
+            android:text="@string/titleMain2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="24sp" />
+
+        <Button
+            android:text="@string/titleMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linTopMain"
+        android:layout_marginTop="20dp"
+        android:id="@+id/livFavorite" />
 </RelativeLayout>

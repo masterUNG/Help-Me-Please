@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Help Me Please</string>
+
+    <string name="titleMain">เพิ่มปลายทาง</string>
+    <string name="titleMain2">หรือ เลือกรายการที่ชอบ</string>
+
+
+
 </resources>
