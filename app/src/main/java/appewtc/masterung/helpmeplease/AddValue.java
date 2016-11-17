@@ -2,6 +2,7 @@ package appewtc.masterung.helpmeplease;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -22,7 +23,7 @@ public class AddValue extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     private EditText editText;
     private Button rangeButton, soundButton, favoriteButton, saveButton;
-    private int rangeAnInt;
+    private int rangeAnInt, soundAnInt;
 
 
     @Override
@@ -63,6 +64,39 @@ public class AddValue extends FragmentActivity implements OnMapReadyCallback {
         });
 
 
+        //soundButton Controller
+        soundButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final CharSequence[] charSequences = new CharSequence[]{
+                        "Bird", "Cat", "Cow", "Dog", "Elephant"};
+                final int[] ints = new int[]{R.raw.bird, R.raw.cat, R.raw.cow,
+                R.raw.dog, R.raw.elephant};
+                AlertDialog.Builder builder = new AlertDialog.Builder(AddValue.this);
+                builder.setCancelable(false);
+                builder.setIcon(R.drawable.nobita48);
+                builder.setTitle(getResources().getString(R.string.sound));
+                builder.setSingleChoiceItems(charSequences, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        soundAnInt = i;
+
+                        playSound(ints[i]);
+
+                        soundButton.setText(charSequences[i].toString());
+
+                        dialogInterface.dismiss();
+
+                    } // dialog
+                });
+                builder.show();
+
+            }   // onClick
+        });
+
+
 
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -70,6 +104,20 @@ public class AddValue extends FragmentActivity implements OnMapReadyCallback {
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }   // Main Method
+
+    private void playSound(int anInt) {
+
+        MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), anInt);
+        mediaPlayer.start();
+
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+
+    }
 
 
     @Override
