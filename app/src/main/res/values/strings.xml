@@ -4,6 +4,10 @@
     <string name="titleMain">เพิ่มปลายทาง</string>
     <string name="titleMain2">หรือ เลือกรายการที่ชอบ</string>
     <string name="title_activity_add_value">Map</string>
+    <string name="range">โปรดเลือกระยะ</string>
+    <string name="sound">โปรดเลือกเสียงเตือน</string>
+    <string name="far">เพิ่มในรายการโปรด</string>
+
 
 
 </resources>
