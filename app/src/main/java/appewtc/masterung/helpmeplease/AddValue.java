@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,7 +24,7 @@ public class AddValue extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     private EditText editText;
     private Button rangeButton, soundButton, favoriteButton, saveButton;
-    private int rangeAnInt, soundAnInt;
+    private int rangeAnInt, soundAnInt, favoriteAnInt = 0;
 
 
     @Override
@@ -92,6 +93,22 @@ public class AddValue extends FragmentActivity implements OnMapReadyCallback {
                     } // dialog
                 });
                 builder.show();
+
+            }   // onClick
+        });
+
+
+        //FavoriteButton Controller
+        favoriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                favoriteAnInt = 1;
+
+                Toast.makeText(AddValue.this,
+                        getResources().getString(R.string.far) + " แล้ว !!!",
+                        Toast.LENGTH_SHORT).show();
+
 
             }   // onClick
         });
